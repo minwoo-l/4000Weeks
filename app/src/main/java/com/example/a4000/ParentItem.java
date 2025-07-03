@@ -2,7 +2,7 @@ package com.example.a4000;
 
 import java.util.ArrayList;
 
-public class ParentItem
+public class ParentItem implements DisplayableItem
 {
     public String title;
     public int image;

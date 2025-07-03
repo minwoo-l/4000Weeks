@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 
 
@@ -31,15 +32,15 @@ public class login extends AppCompatActivity
 
     FirebaseAuth mAuth;
 
-//    private String admin_username = "admin";
-//    private String admin_password = "password";
-
+// test@gmail.com/test123 test2@gmail.com/test123 test3@gmail.com/test123
 
     @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+
+        if(currentUser != null)
+        {
             Intent intent = new Intent(getApplicationContext(), user.class);
             startActivity(intent);
             finish();
@@ -104,7 +105,15 @@ public class login extends AppCompatActivity
                                 }
                                 else
                                 {
-                                    Toast.makeText(login.this, "Login failed.", Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(login.this, "Login failed.", Toast.LENGTH_SHORT).show();
+                                    if (task.getException() instanceof FirebaseAuthInvalidCredentialsException)
+                                    {
+                                        Toast.makeText(login.this, "Incorrect password.", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else
+                                    {
+                                        Toast.makeText(login.this, "There is no account for this email.", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
                         });
@@ -117,4 +126,6 @@ public class login extends AppCompatActivity
 
 
     }
+
+
 }

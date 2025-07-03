@@ -2,7 +2,7 @@
     <string name="app_name">4000</string>
     <string name="title_activity_home">home</string>
     <string name="login_form_title">4000 weeks</string>
-    <string name="login_form_username">Username</string>
+    <string name="login_form_username">Email</string>
     <string name="login_form_password">Password</string>
     <string name="login_form_login">login</string>
     <string name="login_form_sign">signup</string>
@@ -17,8 +17,8 @@
 
     <string name="logout">Logout</string>
 
-    <string name = "addButton">Add</string>
-    <string name = "changeButton">Change</string>
+    <string name="addButton">Add</string>
+    <string name="changeButton">Change</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
